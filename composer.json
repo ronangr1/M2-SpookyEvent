@@ -1,0 +1,39 @@
+{
+    "name": "ronangr1/module-spooky-event",
+    "description": "Allows Magento 2 merchants to surprise customers with a spooky image and sound during the Halloween season. Perfect for adding a bit of fright to your site!",
+    "keywords": [
+        "php",
+        "magento",
+        "magento2",
+        "module",
+        "extension",
+        "free"
+    ],
+    "require": {
+        "php": "^8.1",
+        "magento/framework": "*"
+    },
+    "type": "magento2-module",
+    "license": [
+        "MIT"
+    ],
+    "homepage": "https://github.com/ronangr1/M2-SpookyEvent",
+    "authors": [
+        {
+            "name": "Ronan Guérin",
+            "email": "guerin.ronan@proton.me"
+        }
+    ],
+    "support": {
+        "source": "https://github.com/ronangr1/M2-SpookyEvent",
+        "issues": "https://github.com/ronangr1/M2-SpookyEvent/issues"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Ronangr1\\SpookyEvent\\": ""
+        }
+    }
+}

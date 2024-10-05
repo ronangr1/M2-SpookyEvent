@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Ronan Guérin (@ronangr1) All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="ronangr1" translate="label" sortOrder="100">
+            <label>Ronangr1</label>
+        </tab>
+        <section id="spookyevent" translate="label" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+            <label>Spooky Event</label>
+            <tab>ronangr1</tab>
+            <resource>Ronangr1_SpookyEvent::config_spookyevent</resource>
+            <group id="general" translate="label" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>General</label>
+                <field id="hyva_compliance" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Hyvä Compliance</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

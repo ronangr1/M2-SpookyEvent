@@ -5,7 +5,7 @@ define(['jquery', 'jquery/ui'], function ($) {
         _create: function () {
             const self = this
             $(document).ready(function () {
-                $('a, button').click(function (e) {
+                $('a[data-spooky="true"]').click(function (e) {
                     e.preventDefault();
                     self._showScreamer()
                     setTimeout(function () {
@@ -27,7 +27,9 @@ define(['jquery', 'jquery/ui'], function ($) {
                     top: '50%',
                     left: '50%',
                     transform: 'translate(-50%, -50%)',
-                    zIndex: 9999
+                    zIndex: 9999,
+                    width: '100%',
+                    height: '100%'
                 });
 
             $('body').append(screamerImage);

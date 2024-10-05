@@ -1,0 +1,58 @@
+<?php
+/**
+ * Copyright © Ronan Guérin (@ronangr1) All rights reserved.
+ * See COPYING.txt for license details.
+ */
+declare(strict_types=1)
+
+/**
+ * @var \Ronangr1\SpookyEvent\Block\Screamer $block
+ * @var \Magento\Framework\Escaper $escaper
+ */
+?>
+
+<script defer>
+    document.addEventListener('DOMContentLoaded', function () {
+        const spookyLinks = document.querySelectorAll('a[data-spooky="true"]')
+        spookyLinks.forEach(function (element) {
+            element.addEventListener('click', function (event) {
+                event.preventDefault()
+                const targetUrl = element.tagName.toLowerCase() === 'a' ? element.href : null
+                showScreamer(function () {
+                    if (targetUrl) {
+                        window.location.href = targetUrl
+                    }
+                })
+            })
+        })
+
+        function showScreamer(callback) {
+            const audioUrl = "<?= $escaper->escapeUrl($block->getViewFileUrl('Ronangr1_SpookyEvent/audio/screamer.mp3')) ?>"
+            const imageUrl = "<?= $escaper->escapeUrl($block->getViewFileUrl('Ronangr1_SpookyEvent/images/screamer.jpg')) ?>"
+
+            const audio = new Audio(audioUrl)
+            audio.play().then(function () {
+                console.log('SPOOKY!')
+            })
+
+            const screamerImage = document.createElement('img')
+            screamerImage.src = imageUrl
+            screamerImage.style.position = 'fixed'
+            screamerImage.style.top = '50%'
+            screamerImage.style.left = '50%'
+            screamerImage.style.transform = 'translate(-50%, -50%)'
+            screamerImage.style.zIndex = '99999'
+            screamerImage.style.width = '100%'
+            screamerImage.style.height = '100%'
+
+            document.body.appendChild(screamerImage)
+
+            setTimeout(function () {
+                screamerImage.remove()
+                if (callback) {
+                    callback()
+                }
+            }, 5000)
+        }
+    })
+</script>

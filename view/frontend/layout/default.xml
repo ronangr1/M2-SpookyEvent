@@ -1,10 +1,19 @@
 <?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Ronan Guérin (@ronangr1) All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <referenceContainer name="before.body.end">
-        <block class="Ronangr1\SpookyEvent\Block\Screamer"
-               name="ronangr1_spooky_event"
-               template="Ronangr1_SpookyEvent::screamer.phtml"
-        />
+        <block class="Magento\Framework\View\Element\Template"
+               name="ronangr1_spooky_event">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="helper"
+                          helper="Ronangr1\SpookyEvent\Helper\Template::getTemplate"/>
+            </action>
+        </block>
     </referenceContainer>
 </page>

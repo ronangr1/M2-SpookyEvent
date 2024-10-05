@@ -9,19 +9,16 @@ declare(strict_types=1);
  * @var \Ronangr1\SpookyEvent\Block\Screamer $block
  * @var \Magento\Framework\Escaper $escaper
  */
-
 ?>
 
-<?php if($block->getShowScreamer()): ?>
-    <script type="text/x-magento-init">
-        {
-            "*": {
-                "Ronangr1_SpookyEvent/js/screamer": {
-                    "imageUrl": "<?= $escaper->escapeJs($block->getViewFileUrl('Ronangr1_SpookyEvent/images/screamer.jpg')) ?>",
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Ronangr1_SpookyEvent/js/screamer": {
+                "imageUrl": "<?= $escaper->escapeJs($block->getViewFileUrl('Ronangr1_SpookyEvent/images/screamer.jpg')) ?>",
                     "audioUrl": "<?= $escaper->escapeJs($block->getViewFileUrl('Ronangr1_SpookyEvent/audio/screamer.mp3')) ?>",
                     "showScreamerKey": "<?= $escaper->escapeJs('show_screamer') ?>"
                 }
             }
         }
-    </script>
-<?php endif; ?>
+</script>

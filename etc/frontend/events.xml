@@ -3,11 +3,11 @@
 /**
  * Copyright © Ronan Guérin (@ronangr1) All rights reserved.
  * See COPYING.txt for license details.
-*/
+ */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
-    <event name="layout_generate_blocks_after">
-        <observer name="spooky_event_observer" instance="Ronangr1\SpookyEvent\Observer\RandomScreamer"/>
+    <event name="controller_front_send_response_before">
+        <observer name="your_module_html_observer" instance="Ronangr1\SpookyEvent\Observer\RandomScreamer"/>
     </event>
 </config>
